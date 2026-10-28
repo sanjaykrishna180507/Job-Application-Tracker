@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #f3f4f8; color: #222; }
+a { color: inherit; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 14px 24px; background: #4f46e5; color: #fff; position: sticky; top: 0; z-index: 10; }
+.brand { color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 700; }
+.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+.btn { padding: 8px 14px; border: 1px solid #ccc; border-radius: 6px; background: #fff;
+  cursor: pointer; text-decoration: none; color: #222; font-size: 0.9rem; display: inline-block; }
+.btn:hover:not(:disabled) { background: #f3f4f6; }
+.btn.light { background: #fff; color: #4f46e5; border-color: #fff; font-weight: 600; }
+.btn.primary { background: #4f46e5; color: #fff; border-color: #4f46e5; font-weight: 600; }
+.btn.primary:hover { background: #4338ca !important; }
+.btn.danger { color: #dc2626; border-color: #dc2626; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.stat { background: #fff; padding: 12px; border-radius: 10px; text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08); border-top: 4px solid #4f46e5; }
+.stat b { display: block; font-size: 1.6rem; }
+.stat span { color: #666; font-size: .85rem; }
+.stat.Applied { border-color: #3b82f6; } .stat.Interview { border-color: #f59e0b; }
+.stat.Offer { border-color: #8b5cf6; } .stat.Accepted { border-color: #16a34a; }
+.stat.Rejected { border-color: #dc2626; } .stat.Declined { border-color: #6b7280; }
+
+.filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.filters input { flex: 1; min-width: 200px; }
+.filters select { width: 200px; }
+input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 6px;
+  font-size: 1rem; width: 100%; font-family: inherit; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #c7d2fe; border-color: #4f46e5; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+.card { background: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.card h3 { margin: 10px 0 4px; }
+.card p { margin: 4px 0; }
+.card-top { display: flex; justify-content: space-between; align-items: center; }
+.appid { font-family: monospace; font-weight: 700; color: #4f46e5; }
+.actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.muted { color: #777; }
+.error { color: #b91c1c; background: #fee2e2; padding: 10px; border-radius: 6px; }
+
+.badge { padding: 3px 10px; border-radius: 20px; font-size: .78rem; font-weight: 600; color: #fff; display: inline-block; }
+.badge.Applied { background: #3b82f6; } .badge.Interview { background: #f59e0b; }
+.badge.Offer { background: #8b5cf6; } .badge.Accepted { background: #16a34a; }
+.badge.Rejected { background: #dc2626; } .badge.Declined { background: #6b7280; }
+.badge.overdue { background: #dc2626; margin: 6px 0 0 6px; }
+
+.form, .details { background: #fff; padding: 24px; border-radius: 12px; max-width: 600px;
+  margin: auto; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.form label { display: block; margin: 14px 0 4px; font-weight: 600; }
+.form .btn { margin-top: 18px; }
+.status-box { display: flex; gap: 10px; margin: 16px 0; }
+.status-box .btn { white-space: nowrap; }
+
+.timeline { list-style: none; padding-left: 0; border-left: 3px solid #e5e7eb; margin-left: 8px; }
+.timeline li { padding: 0 0 18px 24px; position: relative; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: #3b82f6; position: absolute; left: -9px; top: 3px; }
+.dot.Interview { background: #f59e0b; } .dot.Offer { background: #8b5cf6; }
+.dot.Accepted { background: #16a34a; } .dot.Rejected { background: #dc2626; } .dot.Declined { background: #6b7280; }
+
+@media (max-width: 600px) {
+  .navbar { padding: 12px; }
+  .brand { font-size: 1.05rem; }
+  .filters select { width: 100%; }
+  .status-box { flex-direction: column; }
+  .form, .details { padding: 16px; }
+}
